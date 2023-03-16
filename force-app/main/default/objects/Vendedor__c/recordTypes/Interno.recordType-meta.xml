@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Interno</fullName>
+    <active>true</active>
+    <description>Se o vendedor trabalha internamente na organização.</description>
+    <label>Interno</label>
+</RecordType>

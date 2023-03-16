@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="Account" type="Account" />
+    
+    <lightning:card>
+        <p class="slds-p-horizontal_small">
+			<lightning:recordEditForm recordId="{!v.recordId}" objectApiName="Account">
+
+				<lightning:messages />
+        		<lightning:inputField fieldName="NextMeetingDate__c" required="true"/>
+	    		<lightning:button class="slds-m-top_small" variant="brand" type="submit" label="Salvar" />    
+
+    		</lightning:recordEditForm>	
+        </p>
+    </lightning:card>    
+    
+    
+</aura:component>
