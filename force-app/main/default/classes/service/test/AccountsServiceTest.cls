@@ -66,15 +66,19 @@ public with sharing class AccountsServiceTest {
 
 		// THEN 
 		//
-		// Verificando se o selector executou corretamente.. apesar que esse aí abaixo não foi usado :(
+		// verify - checa as execuções baseadas nos mocks
 		((AccountsSelector) mocks.verify(selectorAccountsMock)).selectSObjectsById(recordIds);
 		//
 		// Se quiser checar quantas vezes o determinado método foi chamado ou se nunca foi chamado (NEVER)
 		//((Accounts) mocks.verify(domainMock, 1)).setDefaultVendedor(vendedores, uowMock);
         //
-		// Verificando as atualizações de banco de dados
+		// atualizações de banco de dados
 		((fflib_ISObjectUnitOfWork)	mocks.verify(uowMock)).registerDirty(accs);
 		((fflib_ISObjectUnitOfWork)	mocks.verify(uowMock)).commitWork();
+		//
+		// Testar a regra de negócio aqui: criar os asserts da regra de negócio 
+		// (para quais vendedores associou as contas)
+		// ...
 
     }
 }
